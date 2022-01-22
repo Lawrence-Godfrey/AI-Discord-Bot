@@ -40,7 +40,7 @@ async def crossword_answer(ctx: SlashContext, clue: str, length: int):
 
 
 @slash.slash(name="chat", description="Have a conversation with an AI.")
-async def crossword_answer(ctx: SlashContext, prompt: str):
+async def chat(ctx: SlashContext, prompt: str):
     await ctx.defer()  # Use defer since it can take a while to get the response from GPT-3.
     answer = gpt.chat(prompt)
     logging.info('You: %s\nMe: %s', prompt, answer)
